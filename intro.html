@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>INTRO AI KMR</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            width: 100%;
+            height: 100%;
+            background: #000;
+            overflow: hidden;
+        }
+
+        video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+
+<video
+    id="introVideo"
+    autoplay
+    muted
+    loop
+    playsinline
+    preload="auto"
+>
+    <source src="./intro.mp4" type="video/mp4">
+    Browser anda tidak menyokong video.
+</video>
+
+<script>
+    const video = document.getElementById("introVideo");
+
+    video.muted = true;
+    video.volume = 0;
+
+    video.play().catch(() => {
+        console.log("Autoplay disekat oleh browser.");
+    });
+</script>
+
+</body>
+</html>
